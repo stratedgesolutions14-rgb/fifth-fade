@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { AboutPageView } from "@/components/section/about/about-page-view";
 
 export const metadata: Metadata = {
-  title: "About | Fifth Fade",
+  title: "Fifth Fade | About",
   description:
-    "Learn about Fifth Fade musical and recording studio in Tirunelveli—our story, values, process, and creative space.",
+    "Fifth Fade is a music studio that provides music lessons, studio sessions, and creative guidance built to help every artist grow with confidence.",
 };
 
 export default function AboutPage() {

@@ -6,8 +6,13 @@ const infoLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About us" },
   { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact us" },
 ];
+
+const OFFICE_ADDRESS =
+  "35/798  , A/1 , 30th street Shanthi Nagar, palayamkottai , Tirunelveli - 627002 .";
+const OFFICE_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS.trim())}`;
 
 export function Footer() {
   return (
@@ -91,9 +96,15 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-              <span>
-            35/798  , A/1 , 30th street Shanthi Nagar, palayamkottai , Tirunelveli - 627002 .                <br />
-              </span>
+              <Link
+                href={OFFICE_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-primary-foreground/70"
+                aria-label="Open address in Google Maps"
+              >
+                {OFFICE_ADDRESS}
+              </Link>
             </li>
           </ul>
         </div>
@@ -123,15 +134,15 @@ export function Footer() {
 
       <div className="border-t border-secondary/20 px-4 py-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-3 text-center text-sm text-secondary">
-          <span>© 2026 - All Rights Reserved</span>
+          <span >© 2026 - All Rights Reserved</span>
           <span aria-hidden="true" className="hidden h-4 w-px bg-secondary/30 sm:block" />
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5">
             <span className="uppercase tracking-wide">Powered by</span>
             <Link
               href="https://stratedgesolutions.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="mb-1.5 inline-flex items-center transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label="StratEdge Solutions — visit website"
             >
               <Image

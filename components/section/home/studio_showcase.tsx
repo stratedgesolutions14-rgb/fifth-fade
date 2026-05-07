@@ -15,7 +15,7 @@ export default function StudioShowcase() {
 
   return (
     <section className="relative w-full bg-black">
-      <div className="relative mx-auto min-h-[70dvh] w-full max-w-[1600px] overflow-hidden">
+      <div className="relative mx-auto min-h-[90dvh] w-full max-w-[1600px] overflow-hidden">
         {studioShowcaseTabs.map((studio) => (
           <div
             key={studio.id}

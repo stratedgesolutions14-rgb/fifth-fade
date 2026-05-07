@@ -11,7 +11,6 @@ import {
 import { PageSubBanner } from "@/components/common/page-sub-banner";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { studioProjects } from "@/lib/studio-projects";
 
 const marqueePhrases = [
   "Fifth Fade Studios",
@@ -112,11 +111,11 @@ export function AboutPageView() {
 
       <MarqueeStrip />
 
-      <section className="relative mx-auto max-w-6xl px-4 py-10">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-10">
+      <section className="relative mx-auto max-w-6xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-14 lg:pt-12">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="relative lg:col-span-5">
             <div className="pointer-events-none absolute -left-6 top-12 hidden h-32 w-32 rounded-full bg-primary/35 blur-3xl lg:block" />
-            <div className="relative w-full overflow-visible pb-14 sm:pb-16 lg:pb-20">
+            <div className="relative w-full overflow-visible pb-28 sm:pb-32 lg:pb-14">
               {/* Back: hero stays in flow — sets parent height */}
               <div
                 className={cn(
@@ -168,11 +167,13 @@ export function AboutPageView() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="col-span-full block h-[min(38vw,10rem)] shrink-0 lg:hidden" aria-hidden />
+
+          <div className="relative z-10 lg:col-span-7">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               Why we exist
             </p>
-            <h2 className="mt-3 text-3xl font-black uppercase leading-[1.05] text-secondary sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-[1.05] text-secondary sm:mt-3 sm:text-4xl lg:text-5xl">
               A creative pit stop between your idea and the outside world
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
@@ -194,30 +195,7 @@ export function AboutPageView() {
         </div>
       </section>
 
-      {/* <section className="border-y border-border bg-muted/30 py-16 lg:py-20">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:grid-cols-3 sm:px-6 lg:gap-8 lg:px-8">
-          {[
-            { label: "Studio rooms", value: "3+", hint: "Acoustic zones" },
-            { label: "Projects shaped", value: "500+", hint: "Placeholder until your real stats" },
-            { label: "Focus", value: "100%", hint: "One room, one session" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm"
-            >
-              <p className="text-4xl font-black tabular-nums text-secondary sm:text-5xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-sm font-bold uppercase tracking-wide text-secondary">
-                {stat.label}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">{stat.hint}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-6xl px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8 lg:pb-10 lg:pt-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             What guides us
@@ -226,7 +204,7 @@ export function AboutPageView() {
             Values you feel in every session
           </h2>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {values.map(({ title, body, Icon }) => (
             <article
               key={title}
@@ -244,7 +222,7 @@ export function AboutPageView() {
         </div>
       </section>
 
-      <section className="bg-secondary py-16 text-primary lg:py-24">
+      <section className="bg-secondary py-10 text-primary">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col items-start justify-center">
@@ -290,60 +268,7 @@ export function AboutPageView() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              Selected work
-            </p>
-            <h2 className="mt-2 text-3xl font-black uppercase text-secondary sm:text-4xl">
-              Projects shaped in the studio
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              A few releases we&apos;ve helped sound right—from musicals and film
-              streams to singles and videos. Bring your next idea; this wall
-              updates as we ship more.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="text-sm font-bold uppercase tracking-wide text-secondary underline-offset-4 hover:underline"
-          >
-            Discuss your project →
-          </Link>
-        </div>
-
-        <ul className="mt-12 grid gap-8 lg:grid-cols-3">
-          {studioProjects.map((project) => (
-            <li key={project.image}>
-              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
-                <div className="relative aspect-[4/5] w-full bg-muted">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} — ${project.tag}`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="inline-flex w-fit rounded-full border border-primary/40 bg-primary/15 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary">
-                    {project.tag}
-                  </span>
-                  <h3 className="mt-4 text-xl font-black uppercase tracking-tight text-secondary">
-                    {project.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
-                    {project.description}
-                  </p>
-                </div>
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="relative overflow-hidden bg-primary py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-primary py-10">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle_at_1px_1px,var(--foreground)_1px,transparent_0)] [background-size:20px_20px]"
@@ -358,7 +283,7 @@ export function AboutPageView() {
         </blockquote>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-border bg-card px-6 py-10 text-center shadow-sm sm:flex-row sm:px-10 sm:text-left">
           <div className="max-w-xl">
             <h2 className="text-2xl font-black uppercase text-secondary sm:text-3xl">

@@ -4,6 +4,13 @@ import { ServicesShowcase } from "@/components/section/services/services-showcas
 import Instruments from "@/components/section/home/instruments";
 import StudioShowcase from "@/components/section/home/studio_showcase";
 import Testimonial from "@/components/section/home/testimonial";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fifth Fade | Home",
+  description: "Fifth Fade is a music studio that provides music lessons, studio sessions, and creative guidance built to help every artist grow with confidence.",
+};
+
 export default function Home() {
   return (
     <>

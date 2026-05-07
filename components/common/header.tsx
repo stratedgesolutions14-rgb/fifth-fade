@@ -9,11 +9,12 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ];
 
 /** Sections with a light hero under the transparent header — use solid bar & dark links. */
-const LIGHT_HEADER_ROUTES = new Set(["/contact", "/services", "/about"]);
+const LIGHT_HEADER_ROUTES = new Set(["/contact", "/services", "/about", "/projects"]);
 
 export function Header() {
   const pathname = usePathname();

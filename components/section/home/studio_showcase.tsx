@@ -62,7 +62,7 @@ export default function StudioShowcase() {
 
       <div className="border-t border-border bg-background">
         <div className="mx-auto max-w-[1600px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <div className="mb-8 max-w-xl">
+          <div className="mb-8 max-w-xl text-left max-lg:mx-auto max-lg:text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               Studio wall
             </p>

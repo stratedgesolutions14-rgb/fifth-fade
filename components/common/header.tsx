@@ -34,7 +34,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const showSolidHeader = isScrolled || isMenuOpen || onLightBackdrop;
+  /** Omit isMenuOpen: drawer has its own surface; solid bar over the home hero looks wrong. */
+  const showSolidHeader = isScrolled || onLightBackdrop;
 
   return (
     <header
@@ -42,9 +43,11 @@ export function Header() {
         showSolidHeader
           ? "border-border bg-background/95 backdrop-blur"
           : "border-transparent bg-transparent"
-      }`}
+      } ${isMenuOpen ? "max-md:border-transparent max-md:bg-transparent max-md:backdrop-blur-none" : ""}`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8 ${isMenuOpen ? "max-md:hidden" : ""}`}
+      >
         <Link href="/" className="text-xl font-semibold tracking-tight">
           <Image
             src="/images/logo.jpeg"
@@ -93,54 +96,56 @@ export function Header() {
       </div>
 
       <div
-        className={`fixed inset-0 z-50 flex h-[100dvh] transition-opacity duration-300 ease-in-out md:hidden ${isMenuOpen
+        className={`fixed inset-0 z-[60] flex h-[100dvh] transition-opacity duration-300 ease-in-out md:hidden ${isMenuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
           }`}
         aria-hidden={!isMenuOpen}
       >
         <aside
-          className={`h-full w-4/5 border-r border-border bg-background px-4 py-4 shadow-xl transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          className={`flex h-full w-4/5 flex-col border-r border-border bg-background pt-[env(safe-area-inset-top)] shadow-xl transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
             }`}
         >
-          <div className="mb-8 flex items-center justify-between">
-            <Link
-              href="/"
-              className="text-xl font-semibold tracking-tight"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Music
-            </Link>
+          <div className="flex flex-1 flex-col px-4 pb-4 pt-4">
+            <div className="mb-8 flex items-center justify-between">
+              <Link
+                href="/"
+                className="text-xl font-semibold tracking-tight"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Music
+              </Link>
 
-            <button
-              type="button"
-              className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Close menu"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <X className="size-5" aria-hidden="true" />
-            </button>
+              <button
+                type="button"
+                className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Close menu"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <X className="size-5" aria-hidden="true" />
+              </button>
+            </div>
+
+            <nav aria-label="Mobile navigation">
+              <ul className="flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`block rounded-md px-3 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                        pathname === link.href
+                          ? "bg-primary font-semibold text-primary-foreground"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-
-          <nav aria-label="Mobile navigation">
-            <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`block rounded-md px-3 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                      pathname === link.href
-                        ? "bg-primary font-semibold text-primary-foreground"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </aside>
 
         <button

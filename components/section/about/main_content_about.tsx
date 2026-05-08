@@ -91,16 +91,18 @@ export default function MainContentAbout() {
         </div>
 
         <div data-aos="fade-left" data-aos-delay="100">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-            About Us
-          </p>
-          <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl lg:text-5xl">
-            Learn music with better guidance
-          </h2>
-          <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-            Build your confidence with expert lessons, studio support, and a
-            creative space designed for every musician.
-          </p>
+          <div className="text-left max-lg:text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+              About Us
+            </p>
+            <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl lg:text-5xl">
+              Learn music with better guidance
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base max-lg:mx-auto lg:mx-0">
+              Build your confidence with expert lessons, studio support, and a
+              creative space designed for every musician.
+            </p>
+          </div>
 
           <div className="mt-6 grid gap-x-6 sm:grid-cols-2">
             {aboutFeatures.map((feature, index) => (

@@ -84,7 +84,7 @@ export function ServicesShowcase({ variant = "home" }: ServicesShowcaseProps) {
           className={cn(
             "mx-auto grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3",
             "items-stretch",
-            isHome ? "mt-12" : "mt-10",
+            isHome ? "mt-12" : "mt-0",
           )}
         >
           {displayed.map((service, index) => (

@@ -111,11 +111,11 @@ export function AboutPageView() {
 
       <MarqueeStrip />
 
-      <section className="relative mx-auto max-w-6xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-14 lg:pt-12">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-10">
+      <section className="relative mx-auto max-w-6xl px-4 pb-6 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-12 lg:pt-16">
+        <div className="grid gap-6 max-lg:gap-5 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="relative lg:col-span-5">
             <div className="pointer-events-none absolute -left-6 top-12 hidden h-32 w-32 rounded-full bg-primary/35 blur-3xl lg:block" />
-            <div className="relative w-full overflow-visible pb-28 sm:pb-32 lg:pb-14">
+            <div className="relative w-full overflow-visible xxl:pb-16  xl:pb-16  lg:pb-14  md:pb-6 sm:pb-10 sx:pb-10">
               {/* Back: hero stays in flow — sets parent height */}
               <div
                 className={cn(
@@ -133,7 +133,6 @@ export function AboutPageView() {
                   priority
                 />
               </div>
-
               {/* Middle: absolute — same frame as card 3; lower z than keys shot */}
               <div
                 className={cn(
@@ -151,7 +150,6 @@ export function AboutPageView() {
                   />
                 </div>
               </div>
-
               {/* Front: absolute — straight, highest z */}
               <div className="absolute right-0 top-[58%] z-30 w-[66%] sm:top-[60%]">
                 <div className={whyExistOverlapFrame}>
@@ -167,10 +165,10 @@ export function AboutPageView() {
             </div>
           </div>
 
-          <div className="col-span-full block h-[min(38vw,10rem)] shrink-0 lg:hidden" aria-hidden />
+          {/* <div className="col-span-full block h-[min(24vw,4.5rem)] shrink-0 lg:hidden" aria-hidden /> */}
 
-          <div className="relative z-10 lg:col-span-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+          <div className="relative z-10 max-lg:z-40 lg:col-span-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary max-[700px]:pt-6  max-[638px]:pt-8 max-[500px]:pt-14 max-[450px]:pt-16 max-[400px]:pt-20 max-[350px]:pt-24 max-[300px]:pt-28 ">
               Why we exist
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase leading-[1.05] text-secondary sm:mt-3 sm:text-4xl lg:text-5xl">
@@ -195,7 +193,7 @@ export function AboutPageView() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8 lg:pb-10 lg:pt-10">
+      <section className="mx-auto max-w-6xl px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8 lg:pb-10 lg:pt-2">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             What guides us

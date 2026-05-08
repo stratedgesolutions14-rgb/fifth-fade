@@ -53,9 +53,9 @@ const rightFeatures: AboutFeature[] = [
 
 const aboutFeatures = [...leftFeatures, ...rightFeatures];
 
-function FeatureItem({ title, description, Icon }: AboutFeature) {
+function FeatureItem({ title, description, Icon, isLastRow }: AboutFeature & { isLastRow?: boolean }) {
   return (
-    <article className="flex items-start gap-4 py-5">
+    <article className={`flex items-start gap-4 py-5 ${isLastRow ? "pb-0" : ""}`}>
       <div className="flex size-14 shrink-0 items-center justify-center bg-primary text-primary-foreground shadow-lg shadow-primary/20">
         <Icon className="size-8 text-secondary" aria-hidden="true" strokeWidth={2.4} />
       </div>
@@ -103,8 +103,12 @@ export default function MainContentAbout() {
           </p>
 
           <div className="mt-6 grid gap-x-6 sm:grid-cols-2">
-            {aboutFeatures.map((feature) => (
-              <FeatureItem key={feature.title} {...feature} />
+            {aboutFeatures.map((feature, index) => (
+              <FeatureItem
+                key={feature.title}
+                {...feature}
+                isLastRow={index >= aboutFeatures.length - 2}
+              />
             ))}
           </div>
         </div>

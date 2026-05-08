@@ -59,8 +59,8 @@ export default function Instruments() {
 
         <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {instruments.map(({ title, description, Icon }) => (
-            <article key={title} className="text-center">
-              <div className="mx-auto flex size-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+            <article key={title} className="group text-center">
+              <div className="mx-auto flex size-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-500 group-hover:scale-[1.03]">
                 <Icon className="size-9 text-secondary" aria-hidden="true" strokeWidth={1.8} />
               </div>
 

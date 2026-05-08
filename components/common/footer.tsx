@@ -24,7 +24,7 @@ export function Footer() {
             className="inline-flex items-center transition-opacity hover:opacity-80"
           >
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Logo"
               width={50}
               height={50}

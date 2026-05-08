@@ -50,7 +50,7 @@ export function Header() {
       >
         <Link href="/" className="text-xl font-semibold tracking-tight">
           <Image
-            src="/images/logo.jpeg"
+            src="/images/logo.png"
             alt="Logo"
             width={50}
             height={50}

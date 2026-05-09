@@ -62,7 +62,7 @@ export function ServicesShowcase({ variant = "home" }: ServicesShowcaseProps) {
   return (
     <section
       id="services"
-      className={cn("scroll-mt-28 bg-background py-10")}
+      className={cn("scroll-mt-28 bg-background pb-10")}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {isHome ? (

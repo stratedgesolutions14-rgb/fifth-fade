@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { z } from "zod";
 
+import { CheckCircle2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,6 +19,9 @@ const contactSchema = z.object({
 });
 
 export type ContactFormResult = z.infer<typeof contactSchema>;
+
+const CONTACT_FORM_SUCCESS_MESSAGE =
+  "Thanks — we received your message and will get back soon.";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -51,6 +56,7 @@ export function ContactForm() {
     }
 
     setStatus("loading");
+    const form = e.currentTarget;
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -59,15 +65,15 @@ export function ContactForm() {
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
 
-      if (!res.ok) {
+      if (!res.ok || data.ok === false) {
         setStatus("error");
         setMessage(data.error ?? "Something went wrong. Try again shortly.");
         return;
       }
 
       setStatus("success");
-      setMessage("Thanks — we received your message and will get back soon.");
-      e.currentTarget.reset();
+      setMessage(CONTACT_FORM_SUCCESS_MESSAGE);
+      form.reset();
     } catch {
       setStatus("error");
       setMessage("Could not reach the server. Check your connection and try again.");
@@ -83,16 +89,20 @@ export function ContactForm() {
       {message !== null ? (
         <div
           role="status"
+          aria-live="polite"
           className={cn(
             "rounded-lg border px-4 py-3 text-sm",
             status === "success"
-              ? "border-primary/60 bg-primary/15 text-secondary"
+              ? "flex items-start gap-3 border-2 border-emerald-600/70 bg-emerald-50 text-emerald-950 dark:border-emerald-500/60 dark:bg-emerald-950/40 dark:text-emerald-50"
               : status === "error"
                 ? "border-destructive/40 bg-destructive/5 text-destructive"
                 : "border-border text-muted-foreground",
           )}
         >
-          {message}
+          {status === "success" ? (
+            <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden />
+          ) : null}
+          <span className={status === "success" ? "min-w-0 leading-snug" : undefined}>{message}</span>
         </div>
       ) : null}
 

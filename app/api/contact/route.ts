@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
+import {
+  contactMailHtml,
+  contactMailPlainText,
+} from "@/lib/email/contact-mail-template";
+
 const bodySchema = z.object({
   name: z.string().trim().min(1).max(120),
   email: z.string().trim().email(),
@@ -9,56 +14,59 @@ const bodySchema = z.object({
   message: z.string().trim().min(10).max(5000),
 });
 
-function escapeHtml(text: string) {
-  return text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
 export async function POST(request: Request) {
+  let raw: unknown;
   try {
-    const raw = await request.json();
-    const parsed = bodySchema.safeParse(raw);
+    raw = await request.json();
+  } catch {
+    return NextResponse.json(
+      { ok: false, error: "Expected a JSON body." },
+      { status: 400 },
+    );
+  }
 
-    if (!parsed.success) {
-      return NextResponse.json(
-        { ok: false, error: "Please check all fields are valid." },
-        { status: 400 },
-      );
-    }
+  const parsed = bodySchema.safeParse(raw);
 
-    const { name, email, subject, message } = parsed.data;
-    const apiKey = process.env.RESEND_API_KEY;
+  if (!parsed.success) {
+    return NextResponse.json(
+      { ok: false, error: "Please check all fields are valid." },
+      { status: 400 },
+    );
+  }
 
-    if (!apiKey) {
-      return NextResponse.json(
-        { ok: false, error: "Email service is not configured yet." },
-        { status: 503 },
-      );
-    }
+  const { name, email, subject, message } = parsed.data;
+  const apiKey = process.env.RESEND_API_KEY;
 
-    const to = process.env.CONTACT_TO_EMAIL ?? "fifthfade@gmail.com";
-    const from =
-      process.env.CONTACT_FROM_EMAIL ?? "Contact <onboarding@resend.dev>";
+  if (!apiKey) {
+    return NextResponse.json(
+      { ok: false, error: "Email service is not configured yet." },
+      { status: 503 },
+    );
+  }
 
+  const to = process.env.CONTACT_TO_EMAIL;
+  if (!to?.trim()) {
+    return NextResponse.json(
+      { ok: false, error: "Contact recipient email is not configured." },
+      { status: 503 },
+    );
+  }
+
+  const from =
+    process.env.CONTACT_FROM_EMAIL ?? "Contact <onboarding@resend.dev>";
+
+  const templateProps = { name, email, subject, message };
+
+  try {
     const resend = new Resend(apiKey);
-    const html = `
-      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-      <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-      <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
-      <hr />
-      <p style="white-space:pre-wrap;">${escapeHtml(message)}</p>
-    `;
 
     const { error } = await resend.emails.send({
       from,
-      to: [to],
+      to: [to.trim()],
       replyTo: email,
       subject: `[Website] ${subject}`,
-      html,
+      html: contactMailHtml(templateProps),
+      text: contactMailPlainText(templateProps),
     });
 
     if (error) {
@@ -70,10 +78,11 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("[contact] Unexpected error:", err);
     return NextResponse.json(
-      { ok: false, error: "Invalid request body." },
-      { status: 400 },
+      { ok: false, error: "Could not send email. Try again later." },
+      { status: 502 },
     );
   }
 }

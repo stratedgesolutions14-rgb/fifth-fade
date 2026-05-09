@@ -37,7 +37,7 @@ function InstagramGlyph({ className }: { className?: string }) {
     </svg>
   );
 }
-
+const year = new Date().getFullYear();
 export function Footer() {
   return (
     <footer className="bg-secondary text-primary-foreground">
@@ -56,7 +56,7 @@ export function Footer() {
             />
           </Link>
 
-          <p className="mt-6 max-w-56 text-sm leading-5 text-primary">
+          <p className="mt-1 max-w-56 text-sm leading-5 text-primary">
             It is a long established fact that a reader will be distracted by
             the readable.
           </p>
@@ -66,7 +66,7 @@ export function Footer() {
               target="_blank"
               href="https://www.facebook.com/"
               aria-label="Facebook"
-              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90"
+              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90   rounded-[9px]"
             >
               <FacebookGlyph className="size-3.5" />
             </Link>
@@ -75,7 +75,7 @@ export function Footer() {
               rel="noopener noreferrer"
               href="https://www.youtube.com/@FifthFade/"
               aria-label="YouTube"
-              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90"
+              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90 rounded-[9px]"
             >
               <YouTubeGlyph className="size-3.5" />
             </Link>
@@ -83,7 +83,7 @@ export function Footer() {
               target="_blank"
               href="https://www.instagram.com/fifthfade_musical_studio/"
               aria-label="Instagram"
-              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90"
+              className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90 rounded-[9px]"
             >
               <InstagramGlyph className="size-3.5" />
             </Link>
@@ -97,9 +97,9 @@ export function Footer() {
               <Phone className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
               <Link
                 href="tel:+919486983061"
-                className="transition-colors hover:text-primary/70"
+                className="transition-colors hover:text-primary/70 "
               >
-                Call - +91 94869 83061
+                Call &#45; +91 94869 83061
               </Link>
             </li>
             <li className="flex items-start gap-3">
@@ -110,7 +110,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-primary/70"
               >
-                WhatsApp - +91 93453 11799
+                WhatsApp &#45; +91 93453 11799
               </Link>
             </li>
             <li className="flex items-start gap-3">
@@ -162,7 +162,7 @@ export function Footer() {
 
       <div className="border-t border-primary/20 px-4 py-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-3 text-center text-sm text-primary">
-          <span >© 2026 - All Rights Reserved</span>
+          <span >&#169; {year} &#45; All Rights Reserved</span>
           <span aria-hidden="true" className="hidden h-4 w-px bg-primary/30 sm:block" />
           <div className="flex items-center gap-0.5">
             <span className="uppercase tracking-wide">Powered by</span>

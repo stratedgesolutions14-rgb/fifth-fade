@@ -30,4 +30,18 @@ export const studioProjects: StudioProject[] = [
     description:
       "Fifth Fade Music release with Avinash G and Janetlin Isha—tracking through master, ready for YouTube and socials out of the same room.",
   },
+  {
+    image: "/images/projects/pro_4.jpeg",
+    title: "Hey Nenjam",
+    tag: "Single · romantic music",
+    description:
+      "An emotional musical release by Jabez Jude P, blending warm visuals and heartfelt storytelling—crafted for streaming platforms, YouTube premieres.",
+  },
+  {
+    image: "/images/projects/pro_5.jpeg",
+    title: "Iravini vizhigal",
+    tag: "Film · thriller drama",
+    description:
+      "A dark investigative thriller directed by Siva Venkatachalam, featuring intense cinematic visuals and suspense-driven storytelling.",
+  },
 ];

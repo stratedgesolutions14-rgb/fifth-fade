@@ -16,24 +16,66 @@ export default function StudioShowcase() {
   return (
     <section className="relative w-full bg-black">
       <div className="relative mx-auto min-h-[90dvh] w-full max-w-[1600px] overflow-hidden">
-        {studioShowcaseTabs.map((studio) => (
+      {studioShowcaseTabs.map((studio) => (
+  <div
+    key={studio.id}
+    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+      studio.id === activeStudioId
+        ? "opacity-100"
+        : "pointer-events-none opacity-0"
+    }`}
+    aria-hidden={studio.id !== activeStudioId}
+  >
+    {/* Desktop + Tablet */}
+    <div className="relative hidden h-full w-full md:block">
+      <Image
+        src={studio.desktopSrc}
+        alt={studio.alt}
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority={studio.id === studioShowcaseTabs[0].id}
+      />
+    </div>
+
+    {/* Mobile */}
+    <div className="relative block h-full w-full md:hidden">
+      <Image
+        src={studio.mobileSrc}
+        alt={studio.alt}
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority={studio.id === studioShowcaseTabs[0].id}
+      />
+    </div>
+  </div>
+))}
+        {/* {studioShowcaseTabs.map((studio) => (
           <div
             key={studio.id}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              studio.id === activeStudioId ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${studio.id === activeStudioId ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
             aria-hidden={studio.id !== activeStudioId}
           >
             <Image
-              src={studio.src}
+              src={studio.desktopSrc}
               alt={studio.alt}
               fill
-              className="object-cover"
+              className="object-cover hidden md:block"
+              sizes="100vw"
+              priority={studio.id === studioShowcaseTabs[0].id}
+            />
+            <Image
+              src={studio.mobileSrc}
+              alt={studio.alt}
+              fill
+              className="object-cover block md:hidden"
               sizes="100vw"
               priority={studio.id === studioShowcaseTabs[0].id}
             />
           </div>
-        ))}
+        ))} */}
 
         <div className="absolute inset-0 bg-black/30" />
 
@@ -46,9 +88,8 @@ export default function StudioShowcase() {
                 <button
                   key={studio.id}
                   type="button"
-                  className={`h-20 border-r border-white/25 px-3 text-left text-base font-extrabold transition-colors duration-300 last:border-r-0 sm:px-6 sm:text-lg ${
-                    isActive ? "bg-black/75 text-[#a86a2b]" : "hover:bg-black/65"
-                  }`}
+                  className={`h-20 border-r border-white/25 px-3 text-left text-base font-extrabold transition-colors duration-300 last:border-r-0 sm:px-6 sm:text-lg ${isActive ? "bg-black/75 text-[#a86a2b]" : "hover:bg-black/65"
+                    }`}
                   onMouseEnter={() => setActiveStudioId(studio.id)}
                   onFocus={() => setActiveStudioId(studio.id)}
                 >

@@ -41,7 +41,7 @@ const year = new Date().getFullYear();
 export function Footer() {
   return (
     <footer className="bg-secondary text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-6xl  gap-6 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <Link
             href="/"
@@ -62,14 +62,14 @@ export function Footer() {
           </p>
 
           <div className="mt-4 flex items-center gap-3">
-            <Link
+            {/* <Link
               target="_blank"
               href="https://www.facebook.com/"
               aria-label="Facebook"
               className="flex size-7 items-center justify-center bg-primary text-secondary transition-colors hover:bg-primary/90   rounded-[9px]"
             >
               <FacebookGlyph className="size-3.5" />
-            </Link>
+            </Link> */}
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -153,9 +153,8 @@ export function Footer() {
         <div>
           <h2 className="text-lg font-bold uppercase text-primary">Opening Hours</h2>
           <ul className="mt-6 space-y-4 text-sm text-primary">
-            <li>Working Days: 09:00 - 20:00</li>
-            <li>Saturday: 10:00 - 18:00</li>
-            <li>Sunday: 12:00 - 18:00</li>
+            <li>Working Days: Monday to Sunday</li>
+            <li>Working Hours: 09:00 AM - 09:00 PM</li>
           </ul>
         </div>
       </div>

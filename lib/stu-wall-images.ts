@@ -14,28 +14,58 @@ export const studioShowcaseTabs = [
   {
     id: "artist-lounge",
     label: "Artist Lounge",
-    src: "/images/stu_wall/std_1.JPEG",
+    desktopSrc: "/images/stu_wall/std_1.JPEG",
+    mobileSrc: "/images/stu_wall/mobile/std_1_mobile.JPEG",
     alt: "Artist lounge with sofa, bean bag, and production desk",
   },
   {
     id: "control-room",
     label: "Control Room",
-    src: "/images/stu_wall/stu_5.JPEG",
+    desktopSrc: "/images/stu_wall/control_desktop.jpeg",
+    mobileSrc: "/images/stu_wall/control_responsive.jpeg",
     alt: "Control room facing vocal booth with Fifth Fade logo",
   },
   {
     id: "live-session",
     label: "Live Session",
-    src: "/images/stu_wall/stu_6.jpeg",
+    desktopSrc: "/images/stu_wall/live_desktop.jpeg",
+    mobileSrc: "/images/stu_wall/live_responsive.jpeg",
     alt: "Engineer at DAW with vocalist recording in the booth",
   },
   {
     id: "vocal-booth",
     label: "Vocal Booth",
-    src: "/images/stu_wall/stu_9.jpeg",
+    desktopSrc: "/images/stu_wall/vocal_desktop.jpeg",
+    mobileSrc: "/images/stu_wall/vocal_responsive.webp",
     alt: "Condenser microphone with Fifth Fade wall sign",
   },
 ] as const;
+// export const studioShowcaseTabs = [
+//   {
+//     id: "artist-lounge",
+//     label: "Artist Lounge",
+//     src: "/images/stu_wall/std_1.JPEG",
+//     alt: "Artist lounge with sofa, bean bag, and production desk",
+//   },
+//   {
+//     id: "control-room",
+//     label: "Control Room",
+//     src: "/images/stu_wall/stu_5.JPEG",
+//     alt: "Control room facing vocal booth with Fifth Fade logo",
+//   },
+//   {
+//     id: "live-session",
+//     label: "Live Session",
+//     src: "/images/stu_wall/stu_6.jpeg",
+//     alt: "Engineer at DAW with vocalist recording in the booth",
+//   },
+//   {
+//     id: "vocal-booth",
+//     label: "Vocal Booth",
+//     src: "/images/stu_wall/stu_9.jpeg",
+//     alt: "Condenser microphone with Fifth Fade wall sign",
+//   },
+// ] as const;
 
 /** Photos not used in the home hero tabs (7 images). */
 export const studioWallGalleryOnly: StuWallPhoto[] = [

@@ -5,6 +5,7 @@ import Instruments from "@/components/section/home/instruments";
 import StudioShowcase from "@/components/section/home/studio_showcase";
 import Testimonial from "@/components/section/home/testimonial";
 import type { Metadata } from "next";
+import JoinCourse from "@/components/section/home/join_course";
 
 export const metadata: Metadata = {
   title: "Fifth Fade | Home",
@@ -33,6 +34,7 @@ export default function Home() {
         </div>
       </section>
       <MainContentAbout />
+      <JoinCourse />
       <ServicesShowcase variant="home" />
       <LifeAbout />
       <Testimonial />

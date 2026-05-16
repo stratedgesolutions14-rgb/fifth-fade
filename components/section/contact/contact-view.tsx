@@ -15,7 +15,7 @@ export function ContactView() {
         title="Book a lesson or studio time"
         description="Leave a note and we will reply shortly. Prefer instant chat? Reach us on WhatsApp from anywhere on the site."
       />
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch lg:gap-14 lg:px-8">
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch lg:gap-14 lg:px-8">
         <article className="order-2 space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm lg:order-1 lg:p-8">
           <div>
             <h2 className="text-lg font-black uppercase tracking-tight text-secondary sm:text-xl">

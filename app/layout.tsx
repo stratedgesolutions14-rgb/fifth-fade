@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Anta, Poppins } from "next/font/google";
-import { AosInit } from "@/components/common/aos-init";
+// import { AosInit } from "@/components/common/aos-init";
 import { FloatingActions } from "@/components/common/floating-actions";
 import { Footer } from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import "./globals.css";
+import { Providers } from "@/components/providers";
+
 
 const anta = Anta({
   variable: "--primary-font",
@@ -36,9 +38,16 @@ export default function RootLayout({
       lang="en"
       className={`${anta.variable} ${poppins.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <Suspense fallback={null}>
-          <AosInit />
           <Header />
         </Suspense>
         <main className="flex flex-1 flex-col">
@@ -46,6 +55,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingActions />
+        <Providers />
       </body>
     </html>
   );

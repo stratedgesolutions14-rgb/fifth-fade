@@ -16,41 +16,40 @@ export default function StudioShowcase() {
   return (
     <section className="relative w-full bg-black">
       <div className="relative mx-auto min-h-[90dvh] w-full max-w-[1600px] overflow-hidden">
-      {studioShowcaseTabs.map((studio) => (
-  <div
-    key={studio.id}
-    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-      studio.id === activeStudioId
-        ? "opacity-100"
-        : "pointer-events-none opacity-0"
-    }`}
-    aria-hidden={studio.id !== activeStudioId}
-  >
-    {/* Desktop + Tablet */}
-    <div className="relative hidden h-full w-full md:block">
-      <Image
-        src={studio.desktopSrc}
-        alt={studio.alt}
-        fill
-        className="object-cover"
-        sizes="100vw"
-        priority={studio.id === studioShowcaseTabs[0].id}
-      />
-    </div>
+        {studioShowcaseTabs.map((studio) => (
+          <div
+            key={studio.id}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${studio.id === activeStudioId
+                ? "opacity-100"
+                : "pointer-events-none opacity-0"
+              }`}
+            aria-hidden={studio.id !== activeStudioId}
+          >
+            {/* Desktop + Tablet */}
+            <div className="relative hidden h-full w-full md:block">
+              <Image
+                src={studio.desktopSrc}
+                alt={studio.alt}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority={studio.id === studioShowcaseTabs[0].id}
+              />
+            </div>
 
-    {/* Mobile */}
-    <div className="relative block h-full w-full md:hidden">
-      <Image
-        src={studio.mobileSrc}
-        alt={studio.alt}
-        fill
-        className="object-cover"
-        sizes="100vw"
-        priority={studio.id === studioShowcaseTabs[0].id}
-      />
-    </div>
-  </div>
-))}
+            {/* Mobile */}
+            <div className="relative block h-full w-full md:hidden">
+              <Image
+                src={studio.mobileSrc}
+                alt={studio.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={studio.id === studioShowcaseTabs[0].id}
+              />
+            </div>
+          </div>
+        ))}
         {/* {studioShowcaseTabs.map((studio) => (
           <div
             key={studio.id}
@@ -102,7 +101,7 @@ export default function StudioShowcase() {
       </div>
 
       <div className="border-t border-border bg-background">
-        <div className="mx-auto max-w-[1600px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-[1600px] px-4  sm:px-6 lg:px-8 py-10">
           <div className="mb-8 max-w-xl text-left max-lg:mx-auto max-lg:text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               Studio wall

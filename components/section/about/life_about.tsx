@@ -49,15 +49,24 @@ export default function LifeAbout() {
             Learn More
           </button>
         </div>
-        <div className="mx-auto w-full max-w-md overflow-hidden [perspective:800px] md:ml-auto md:mr-0">
+        <div className="mx-auto w-full max-w-md overflow-hidden rounded-xl [perspective:800px] md:ml-auto md:mr-0">
           <Image
-            src="/images/music_life.jpeg"
+            src="/images/music_life.webp"
             alt="Hands playing a keyboard in a music studio"
             width={460}
             height={500}
-            className="w-full h-[500px] object-cover transition-transform duration-700 ease-in-out [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
+            className="h-[500px] w-auto object-cover transition-transform duration-700 ease-in-out [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
           />
         </div>
+        {/* <div className="mx-auto w-full max-w-md overflow-hidden [perspective:800px] md:ml-auto md:mr-0">
+          <Image
+            src="/images/music_life.webp"
+            alt="Hands playing a keyboard in a music studio"
+            width={460}
+            height={500}
+            className="w-full rounded-xl h-[500px] object-cover transition-transform duration-700 ease-in-out [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
+          />
+        </div> */}
 
         {/* <div className="mx-auto w-full max-w-md overflow-hidden [perspective:800px] md:ml-auto md:mr-0">
           <Image

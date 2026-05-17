@@ -14,8 +14,8 @@ export const studioShowcaseTabs = [
   {
     id: "artist-lounge",
     label: "Artist Lounge",
-    desktopSrc: "/images/stu_wall/std_1.JPEG",
-    mobileSrc: "/images/stu_wall/mobile/std_1_mobile.JPEG",
+    desktopSrc: "/images/stu_wall/artist_desktop.webp",
+    mobileSrc: "/images/stu_wall/artist_responsive.webp",
     alt: "Artist lounge with sofa, bean bag, and production desk",
   },
   {
@@ -28,14 +28,14 @@ export const studioShowcaseTabs = [
   {
     id: "live-session",
     label: "Live Session",
-    desktopSrc: "/images/stu_wall/live_desktop.jpeg",
-    mobileSrc: "/images/stu_wall/live_responsive.jpeg",
+    desktopSrc: "/images/stu_wall/live_desktop.webp",
+    mobileSrc: "/images/stu_wall/live_responsive.webp",
     alt: "Engineer at DAW with vocalist recording in the booth",
   },
   {
     id: "vocal-booth",
     label: "Vocal Booth",
-    desktopSrc: "/images/stu_wall/vocal_desktop.jpeg",
+    desktopSrc: "/images/stu_wall/vocal_desktop.webp",
     mobileSrc: "/images/stu_wall/vocal_responsive.webp",
     alt: "Condenser microphone with Fifth Fade wall sign",
   },

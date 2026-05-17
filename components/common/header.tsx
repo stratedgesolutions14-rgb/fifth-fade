@@ -54,6 +54,7 @@ export function Header() {
             alt="Logo"
             width={50}
             height={50}
+            priority
             className="w-auto h-auto"
           />
         </Link>

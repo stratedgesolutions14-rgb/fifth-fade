@@ -141,7 +141,7 @@
 .main_bg {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.78), #00000063, #00000063),
-    url("/images/main_bg.jpeg");
+    url("/images/main_bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

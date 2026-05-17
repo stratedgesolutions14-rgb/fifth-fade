@@ -34,16 +34,26 @@ export default function JoinCourse() {
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="overflow-hidden rounded-2xl">
+                    <div className="relative h-[220px] sm:h-[300px] w-full overflow-hidden rounded-xl bg-black">
                         <Image
-                            src="/images/course.jpeg"
+                            src="/images/join_course.webp"
                             alt="Music Production Course"
-                            width={600}
-                            height={500}
-                            className="h-[400px] w-full object-cover"
+                            fill
+                            className="object-contain"
                             priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
+                    {/* <div className="overflow-hidden rounded-xl">
+                        <Image
+                            src="/images/join_course.webp"
+                            alt="Music Production Course"
+                            width={500}
+                            height={300}
+                            className="h-[300px] w-full object-contain "
+                            priority
+                        />
+                    </div> */}
 
                 </div>
             </div>

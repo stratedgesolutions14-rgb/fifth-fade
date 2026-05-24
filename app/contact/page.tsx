@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ContactView } from "@/components/section/contact/contact-view";
 
 export const metadata: Metadata = {
-  title: "Fifth Fade | Contact",
+  title: "Contact Fifth Fade Music & Recording Studio",
   description:
-    "Fifth Fade is a music studio that provides music lessons, studio sessions, and creative guidance built to help every artist grow with confidence.",
+    "Contact Fifth Fade for studio booking, music recording, dubbing, mixing, mastering, and professional audio production services.",
 };
 
 export default function ContactPage() {

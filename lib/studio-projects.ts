@@ -44,4 +44,11 @@ export const studioProjects: StudioProject[] = [
     description:
       "A dark investigative thriller directed by Siva Venkatachalam, featuring intense cinematic visuals and suspense-driven storytelling.",
   },
+  {
+    image: "/images/projects/pro_6.webp",
+    title: "Left Unsaid",
+    tag: "Short Film · Romantic Drama",
+    description:
+      "An emotional romantic drama portraying unspoken feelings, dreams, and unfinished conversations through heartfelt storytelling and cinematic visuals.",
+  },
 ];

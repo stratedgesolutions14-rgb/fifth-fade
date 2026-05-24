@@ -8,8 +8,8 @@ import type { Metadata } from "next";
 import JoinCourse from "@/components/section/home/join_course";
 
 export const metadata: Metadata = {
-  title: "Fifth Fade | Home",
-  description: "Fifth Fade is a music studio that provides music lessons, studio sessions, and creative guidance built to help every artist grow with confidence.",
+  title: "Best Music Studio in Tirunelveli, Tamil Nadu",
+  description: "Fifth Fade is a professional music studio in Tirunelveli offering song recording, dubbing, mixing, mastering, SFX, and video shoot services.",
 };
 
 export default function Home() {

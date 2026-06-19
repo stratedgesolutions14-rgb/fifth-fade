@@ -168,7 +168,7 @@ export function AboutPageView() {
           {/* <div className="col-span-full block h-[min(24vw,4.5rem)] shrink-0 lg:hidden" aria-hidden /> */}
 
           <div className="relative z-10 max-lg:z-40 lg:col-span-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary max-[700px]:pt-6  max-[638px]:pt-8 max-[500px]:pt-14 max-[450px]:pt-16 max-[400px]:pt-20 max-[350px]:pt-24 max-[300px]:pt-28 ">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary max-[700px]:pt-6  max-[638px]:pt-8 max-[500px]:pt-14 max-[450px]:pt-16 max-[400px]:pt-20 max-[350px]:pt-24 max-[300px]:pt-28 ">
               Why we exist
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase leading-[1.05] text-secondary sm:mt-3 sm:text-4xl lg:text-4xl">
@@ -195,7 +195,7 @@ export function AboutPageView() {
 
       <section className="mx-auto max-w-6xl px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8 lg:pb-10 lg:pt-16">
         <div className=" text-left ">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
             What guides us
           </p>
           <h2 className="mt-3 text-3xl font-black uppercase text-secondary sm:text-4xl">
@@ -208,7 +208,7 @@ export function AboutPageView() {
               key={title}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div className="flex size-11 items-center justify-center rounded-xl bg-primary text-secondary transition-transform group-hover:scale-105">
+              <div className="flex size-11 items-center justify-center rounded-xl bg-secondary text-primary transition-transform group-hover:scale-105">
                 <Icon className="size-5" strokeWidth={2.2} aria-hidden />
               </div>
               <h3 className="mt-5 text-base font-black uppercase leading-snug text-secondary">

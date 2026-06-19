@@ -101,9 +101,11 @@ export default function StudioShowcase() {
       </div>
 
       <div className="border-t border-border bg-background">
-        <div className="mx-auto max-w-[1600px] px-4  sm:px-6 lg:px-8 py-10">
+              {/* class="mx-auto grid  items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-10 md:px-8" */}
+
+        <div className="mx-auto max-w-6xl px-4  sm:px-6 lg:px-8 py-10">
           <div className="mb-8 max-w-xl text-left max-lg:mx-auto max-lg:text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
               Studio wall
             </p>
             <h2 className="mt-2 text-2xl font-black uppercase text-secondary sm:text-3xl">
@@ -115,7 +117,7 @@ export default function StudioShowcase() {
             </p>
           </div>
 
-          <ul className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-5">
+          <ul className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {studioWallGalleryOnly.map(({ src, alt }) => (
               <li
                 key={src}

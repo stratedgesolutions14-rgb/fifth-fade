@@ -92,7 +92,7 @@ export default function MainContentAbout() {
 
         <div data-aos="fade-left" data-aos-delay="100">
           <div className="text-left max-lg:text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
               About Us
             </p>
             <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl lg:text-5xl">

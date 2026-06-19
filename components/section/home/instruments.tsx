@@ -45,7 +45,7 @@ export default function Instruments() {
     <section className="w-full bg-background py-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
             Instruments
           </p>
           <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl lg:text-5xl">

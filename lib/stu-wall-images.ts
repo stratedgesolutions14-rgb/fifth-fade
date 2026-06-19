@@ -69,10 +69,10 @@ export const studioShowcaseTabs = [
 
 /** Photos not used in the home hero tabs (7 images). */
 export const studioWallGalleryOnly: StuWallPhoto[] = [
-  {
-    src: "/images/stu_wall/stu_2.JPEG",
-    alt: "Mixing suite with wooden diffuser and booth window",
-  },
+  // {
+  //   src: "/images/stu_wall/stu_2.JPEG",
+  //   alt: "Mixing suite with wooden diffuser and booth window",
+  // },
   {
     src: "/images/stu_wall/stu_3.JPEG",
     alt: "Wide view of control room and acoustic treatment",
@@ -81,10 +81,10 @@ export const studioWallGalleryOnly: StuWallPhoto[] = [
     src: "/images/stu_wall/stu_4.JPEG",
     alt: "Close view of workstation and studio monitors",
   },
-  {
-    src: "/images/stu_wall/stu_7.jpeg",
-    alt: "AKG condenser microphone on shock mount",
-  },
+  // {
+  //   src: "/images/stu_wall/stu_7.jpeg",
+  //   alt: "AKG condenser microphone on shock mount",
+  // },
   {
     src: "/images/stu_wall/stu_8.jpeg",
     alt: "Studio condenser mic and grey acoustic panels",
@@ -93,10 +93,10 @@ export const studioWallGalleryOnly: StuWallPhoto[] = [
     src: "/images/stu_wall/stu_10.jpeg",
     alt: "DAW session with Fifth Fade booth through the glass",
   },
-  {
-    src: "/images/stu_wall/stu_11.jpeg",
-    alt: "Logic Pro session with monitors and booth view",
-  },
+  // {
+  //   src: "/images/stu_wall/stu_11.jpeg",
+  //   alt: "Logic Pro session with monitors and booth view",
+  // },
 ];
 
 /** All 11 wall photos for About (visual story order). */

@@ -13,7 +13,7 @@ export default function LifeAbout() {
     <section className="w-full bg-background py-10">
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-10 md:px-8">
         <div className="max-w-xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
             Music Life
           </p>
           <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl md:text-5xl">

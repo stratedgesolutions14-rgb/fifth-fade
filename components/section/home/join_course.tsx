@@ -12,8 +12,7 @@ export default function JoinCourse() {
                     {/* LEFT SIDE */}
                     <div>
                         <h2 className="text-3xl gap-2 font-black uppercase leading-tight text-secondary sm:text-4xl xl:text-5xl lg:text-4xl">
-                            Music Production Course In{" "}
-                            <span className="text-primary">90 Days</span>
+                            Music Production Course In   90 Days
                         </h2>
 
                         <p className="mt-4 text-sm uppercase tracking-[0.2em] leading-7 text-muted-foreground">

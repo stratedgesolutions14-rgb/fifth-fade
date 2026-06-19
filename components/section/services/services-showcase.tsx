@@ -34,7 +34,7 @@ function ServiceCard({
         className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-primary/25 blur-3xl transition-opacity duration-300 group-hover:opacity-90"
       />
 
-      <div className="relative inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary text-secondary shadow-md shadow-primary/25">
+      <div className="relative inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary shadow-md shadow-primary/25">
         <Icon className="size-6" strokeWidth={2} aria-hidden />
       </div>
 
@@ -46,7 +46,7 @@ function ServiceCard({
       </p>
 
       <div className="relative mt-6 flex shrink-0 items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/70 opacity-80 transition-opacity group-hover:opacity-100">
-        <Sparkles className="size-3.5 text-primary" aria-hidden />
+        <Sparkles className="size-3.5 text-secondary" aria-hidden />
         <span>Studio-ready</span>
       </div>
     </article>
@@ -67,7 +67,7 @@ export function ServicesShowcase({ variant = "home" }: ServicesShowcaseProps) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {isHome ? (
           <div className="mx-auto max-w-xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
               Services
             </p>
             <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-secondary sm:text-4xl lg:text-5xl">
